@@ -1,0 +1,142 @@
+# # to run at start
+# neofetch
+# 
+
+# Colors
+set Green '\033[0;32m'
+set Cyan '\033[0;36m'
+set NC '\033[0m'
+
+printf "$Cyan"; and printf "\nwelcome to fish the shell!$NC\n\n"; and ls
+# echo -e "\nwelcome to the fish shell!\n"; and ls
+# Edit fish profile
+alias sfp='open ~/.config/fish/config.fish -a "Sublime Text"'
+alias vfp='vim ~/.dotfiles/fish_profile_ext'
+# 
+# # virtualenvwrapper for fish
+eval (python -m virtualfish)
+
+# Show contents of a folder when changing to it
+function cd
+    if count $argv > /dev/null
+        builtin cd "$argv"; and echo ""; and ls
+    else
+        builtin cd ~; and echo ""; and ls
+    end
+end
+
+alias c='cd'
+
+function f 
+    z "$argv"; and echo ""; and ls
+end
+ 
+# Alias for better displaying contents of folders
+# alias ls='ls -a'  # seems to break omf themes
+alias lsd='echo ""; and ls -d */' # view only folders
+alias lsl='echo ""; and ls -l'    # view in list format
+alias lsa='echo ""; and ls -a'    # view hidden files
+alias lsla='echo ""; and ls -la'  # list and hidden files
+alias rmrf='rm -rf'
+# # Alias for quickly editing bash_profile
+# alias vbp='nvim ~/.bash_profile'
+# 
+# # Alias for running Django server
+# alias prs='./manage.py runserver'
+ 
+# git aliases
+function gac
+    git add --all;
+    git commit -m "$argv";
+end
+ 
+alias gmm='git merge master'
+alias gmd='git merge development'
+alias gcm='git checkout master'
+alias gcd='git checkout development'
+alias gc='git checkout'
+alias gb='git branch'
+# alias branch='git branch'
+# alias ptk='./manage.py test --keepdb'
+# alias pt='./manage.py test'
+# alias gl='git pull'
+alias gp='git push'
+alias gst='git status'
+# 
+# access OSU server
+alias osu='ssh hugheale@access.engr.oregonstate.edu'
+alias osu1='ssh hugheale@flip1.engr.oregonstate.edu'
+alias osu2='ssh hugheale@flip2.engr.oregonstate.edu'
+alias osu3='ssh hugheale@flip3.engr.oregonstate.edu'
+# hide and unhide desktop icons
+alias h='defaults write com.apple.finder CreateDesktop false;killall Finder'
+alias uh='defaults write com.apple.finder CreateDesktop true;killall Finder'
+# 
+# # open specific apps
+alias st='open -a "Sublime Text"'
+alias ff='open -a "Firefox"'
+alias cl='open -a "Clion"'
+alias pdf='open -a "PDF Expert"'
+# 
+
+# 
+# # colors for terminal
+# export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+# export CLICOLOR=1
+# export LSCOLORS=ExFxBxDxCxegedabagacad
+# 
+# #virtualenv
+# 
+# if set -q VIRTUAL_ENV
+#     echo -n -s "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
+# end
+# 
+# functions -c fish_prompt _old_fish_prompt
+# function fish_prompt
+#   if set -q VIRTUAL_ENV
+#     echo -n -s "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
+#   end
+#   _old_fish_prompt
+# end
+# 
+alias workon='vf activate "$argv"'
+alias deactivate='vf deactivate'
+# 
+# func vls
+#     vf ls;
+#     echo ' ';
+# end
+
+# thefuck
+# thefuck --alias | source 
+function fish_user_key_bindings
+  # ...
+  bind \e\e 'thefuck-command-line'  # Bind EscEsc to thefuck
+  # ...
+end
+
+alias re='omf reload'
+
+alias cpu='top -s 5'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+
+function fish_user_key_bindings
+  fzf_key_bindings
+end
+
+alias o='open'
+
+alias s='du -sh * | sort -h'
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+
+function mkcd
+    mkdir -pv $argv;
+    cd $argv;
+end
+
