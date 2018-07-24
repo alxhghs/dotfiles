@@ -144,3 +144,7 @@ end
 function gitdir
     git -C $argv;
 end
+
+function gitdot
+    git -C ~/.dotfiles $argv;
+end
