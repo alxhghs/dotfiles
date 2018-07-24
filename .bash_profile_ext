@@ -1,4 +1,5 @@
 # neofetch
+ls
 
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
@@ -30,7 +31,7 @@ function c () {
     }
 
 # Alias for quickly editing bash_profile
-alias vbp='vim ~/.bash_profile'
+alias vbp='vim ~/.dotfiles/.bash_profile_ext'
 
 # Alias for running Django server
 alias prs='./manage.py runserver'
