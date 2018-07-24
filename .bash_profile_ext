@@ -1,0 +1,86 @@
+# neofetch
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+export PATH=$PATH:~/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/Alex/Google_Drive/\###Programming/django/django_python3/lib/python3.6/site-packages/django/bin
+
+#virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/Library/Frameworks/Python.framework/Versions/3.6/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenv
+source /Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenvwrapper.sh
+
+# Git branch in prompt.
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# colors for terminal
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(parse_git_branch) $ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+# Alias for better displaying contents of folders
+alias ls='ls -a'
+alias lsd='ls -d */'
+
+# function for changing directory and displaying contents
+function c () {
+    cd "$@" && ls
+    }
+
+# Alias for quickly editing bash_profile
+alias vbp='vim ~/.bash_profile'
+
+# Alias for running Django server
+alias prs='./manage.py runserver'
+
+# git aliases
+alias gac='git add --all && git commit -m'
+alias gmm='git merge master'
+alias gmd='git merge development'
+alias gcm='git checkout master'
+alias gcd='git checkout development'
+alias gc='git checkout'
+alias gb='git branch'
+alias ptk='./manage.py test --keepdb'
+alias pt='./manage.py test'
+alias gl='git pull'
+alias gp='git push'
+alias gst='git status'
+
+# access OSU server
+alias aosu='ssh hugheale@access.engr.oregonstate.edu'
+
+# shortcuts to directories
+alias 271='cd && c OSU/271/weeks/'
+alias 162='cd && c OSU/162/'
+alias 352='cd && c OSU/352/'
+alias dt='cd && c Desktop'
+alias cy='cd && c Desktop/City\ Year/'
+
+# hide and unhide desktop icons
+alias h='defaults write com.apple.finder CreateDesktop false;killall Finder'
+alias uh='defaults write com.apple.finder CreateDesktop true;killall Finder'
+
+# open specific apps
+alias st='open -a "Sublime Text"'
+alias ff='open -a "Firefox"'
+alias cl='open -a "Clion"'
+alias notes='open -a "Notes.app"'
+
+# added by Anaconda3 5.0.1 installer
+export PATH="/Users/Alex/anaconda3/bin:$PATH"
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
+
+##
+# Your previous /Users/Alex/.bash_profile file was backed up as /Users/Alex/.bash_profile.macports-saved_2018-02-09_at_23:11:18
+##
+
+# MacPorts Installer addition on 2018-02-09_at_23:11:18: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.

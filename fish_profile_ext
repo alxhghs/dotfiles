@@ -7,7 +7,7 @@ set Green '\033[0;32m'
 set Cyan '\033[0;36m'
 set NC '\033[0m'
 
-printf "$Cyan"; and printf "\nwelcome to the fish shell!$NC\n\n"; and ls
+printf "$Cyan"; and printf "\nwelcome to the fish shell!$NC\n\n"; and ls -a
 # echo -e "\nwelcome to the fish shell!\n"; and ls
 # Edit fish profile
 alias sfp='open ~/.config/fish/config.fish -a "Sublime Text"'
@@ -33,7 +33,7 @@ function f
 end
  
 # Alias for better displaying contents of folders
-# alias ls='ls -a'  # seems to break omf themes
+alias ls='ls -a'  # seems to break omf themes
 alias lsd='echo ""; and ls -d */' # view only folders
 alias lsl='echo ""; and ls -l'    # view in list format
 alias lsa='echo ""; and ls -a'    # view hidden files
