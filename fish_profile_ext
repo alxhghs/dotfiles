@@ -14,7 +14,7 @@ alias sfp='open ~/.config/fish/config.fish -a "Sublime Text"'
 alias vfp='vim ~/.dotfiles/fish_profile_ext'
 # 
 # # virtualenvwrapper for fish
-eval (python -m virtualfish)
+#eval (python -m virtualfish)
 
 # Show contents of a folder when changing to it
 function cd
@@ -140,3 +140,7 @@ function mkcd
     cd $argv;
 end
 
+# get dotfiles status
+function gitdir
+    git -C $argv;
+end
