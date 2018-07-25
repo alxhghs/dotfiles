@@ -11,8 +11,8 @@ printf "$Cyan"; and printf "\nwelcome to the fish shell!$NC\n\n"; and ls -a
 # echo -e "\nwelcome to the fish shell!\n"; and ls
 # Edit fish profile
 alias sfp='open ~/.config/fish/config.fish -a "Sublime Text"'
-alias vfp='vim ~/.dotfiles/fish_profile_ext'
-alias vrc='vim ~/.dotfiles/vimrc_ext'
+alias vfp='vim ~/.dotfiles/.fish_profile_ext'
+alias vrc='vim ~/.dotfiles/.vimrc_ext'
 # 
 # # virtualenvwrapper for fish
 #eval (python -m virtualfish)
