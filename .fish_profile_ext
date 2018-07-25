@@ -31,9 +31,10 @@ alias c='cd'
 function f 
     z "$argv"; and echo ""; and ls
 end
- 
 # Alias for better displaying contents of folders
-alias ls='ls -a'  # seems to break omf themes
+if test "$USER" = "alex"
+    alias ls='ls -a'
+end
 alias lsd='echo ""; and ls -d */' # view only folders
 alias lsl='echo ""; and ls -l'    # view in list format
 alias lsa='echo ""; and ls -a'    # view hidden files
