@@ -52,10 +52,14 @@ let g:mustache_abbreviations = 1
 
 syntax on
 set number
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 set incsearch
 :imap jj <Esc>
 set clipboard=unnamed
-
+set noruler
+set laststatus=2
+"set statusline=%f
+set statusline="%f%m%r%h%w [%Y] [0x%02.2B]%< %F%=%4v,%4l %3p%% of %L"
 au BufEnter,BufRead *.hbs set filetype=html
 au BufEnter,BufRead *.handlebars set filetype=html
+
