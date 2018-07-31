@@ -150,3 +150,7 @@ end
 function gitdot
     git -C ~/.dotfiles $argv;
 end
+
+# pygmentize files
+alias dog='pygmentize -g'
+
