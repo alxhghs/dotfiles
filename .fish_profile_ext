@@ -64,12 +64,13 @@ alias gb='git branch'
 # alias gl='git pull'
 alias gp='git push'
 alias gst='git status'
-alias glg='log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all'
+alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 # access OSU server
 alias osu='ssh hugheale@access.engr.oregonstate.edu'
 alias osu1='ssh hugheale@flip1.engr.oregonstate.edu'
 alias osu2='ssh hugheale@flip2.engr.oregonstate.edu'
 alias osu3='ssh hugheale@flip3.engr.oregonstate.edu'
+alias os1='ssh hugheale@os1.engr.oregonstate.edu'
 # hide and unhide desktop icons
 alias h='defaults write com.apple.finder CreateDesktop false;killall Finder'
 alias uh='defaults write com.apple.finder CreateDesktop true;killall Finder'
@@ -154,3 +155,12 @@ end
 # pygmentize files
 alias dog='pygmentize -g'
 
+# start and stop postgres server
+alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+
+# locate script
+alias setuplocate='sudo /usr/libexec/locate.updatedb'
+
+# mysql
+alias mysqlroot='mysql -uroot -p'
