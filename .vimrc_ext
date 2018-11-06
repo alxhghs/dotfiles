@@ -1,4 +1,4 @@
-set shell=/bin/bash
+" set shell=/bin/bash
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -46,13 +46,16 @@ filetype plugin indent on    " required
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'itchyny/lightline.vim'
 
-" mustache and handlebars syntax highlighting
-Plugin 'mustache/vim-mustache-handlebars'
-let g:mustache_abbreviations = 1
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'ruanyl/vim-fixmyjs'
+Plugin 'scrooloose/nerdtree'
+" https://vimawesome.com/plugin/vim-colors-solarized-ours
+Plugin 'altercation/vim-colors-solarized'
 
 syntax on
 set number
-set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set incsearch
 :imap jj <Esc>
 set clipboard=unnamed
@@ -62,4 +65,9 @@ set laststatus=2
 set statusline="%f%m%r%h%w [%Y] [0x%02.2B]%< %F%=%4v,%4l %3p%% of %L"
 au BufEnter,BufRead *.hbs set filetype=html
 au BufEnter,BufRead *.handlebars set filetype=html
-
+set textwidth=140
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+let g:fixmyjs_engine = 'tslint'
+noremap <Leader><Leader>f :Fixmyjs<CR>
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
