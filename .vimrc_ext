@@ -28,6 +28,13 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'itchyny/lightline.vim'
+
+" mustache and handlebars syntax highlighting
+Plugin 'mustache/vim-mustache-handlebars'
+let g:mustache_abbreviations = 1
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -43,12 +50,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'itchyny/lightline.vim'
-
-" mustache and handlebars syntax highlighting
-Plugin 'mustache/vim-mustache-handlebars'
-let g:mustache_abbreviations = 1
 
 syntax on
 set number

@@ -33,7 +33,7 @@ function f
 end
 # Alias for better displaying contents of folders
 if test "$USER" = "alex"
-    alias ls='ls -a'
+    alias ls='ls -pa'
 end
 alias lsd='echo ""; and ls -d */' # view only folders
 alias lsl='echo ""; and ls -l'    # view in list format
@@ -52,6 +52,8 @@ function gac
     git commit -m "$argv";
 end
  
+alias gmmd='git merge master;git checkout master'
+alias gmdd='git merge develop'
 alias gmm='git merge master'
 alias gmd='git merge development'
 alias gcm='git checkout master'
@@ -71,6 +73,7 @@ alias osu1='ssh hugheale@flip1.engr.oregonstate.edu'
 alias osu2='ssh hugheale@flip2.engr.oregonstate.edu'
 alias osu3='ssh hugheale@flip3.engr.oregonstate.edu'
 alias os1='ssh hugheale@os1.engr.oregonstate.edu'
+alias osudb='mysql -u hugheale -p -h classmysql.engr.oregonstate.edu cs340_hugheale'
 # hide and unhide desktop icons
 alias h='defaults write com.apple.finder CreateDesktop false;killall Finder'
 alias uh='defaults write com.apple.finder CreateDesktop true;killall Finder'
