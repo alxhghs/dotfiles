@@ -1,0 +1,91 @@
+{
+    "files.autoSave": "afterDelay",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["Z", "Z"],
+            "commands": [
+                ":qa"
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+        {
+            "before": ["f"],
+            "after": [
+                "g", "g", "<leader>", "<leader>", "f"
+            ]
+        }
+    ],
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontSize": "18",
+    "vim.easymotionMarkerWidthPerChar": 10,
+    "vim.easymotionMarkerHeight": 20,
+    "vim.textwidth": 140,
+    "vim.useSystemClipboard": true,
+    "vim.leader": "<space>",
+    "editor.fontFamily": "FiraCode-Retina",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "Fira Code",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.fontSize": 14,
+    "window.zoomLevel": 0,
+    "files.associations": {
+        "*.sass": "plaintext"
+    },
+    "html.autoClosingTags": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "gitProjectManager.baseProjectsFolders": [
+        "/Users/alex/Documents/dev"
+    ],
+    "colorInfo.languages": [
+        {
+            "selector": "css",
+            "colors": "css"
+        },
+        {
+            "selector": "sass",
+            "colors": "css"
+        },
+        {
+            "selector": "scss",
+            "colors": "css"
+        },
+        {
+            "selector": "less",
+            "colors": "css"
+        },
+        {
+            "selector": "typescript",
+            "colors": "css"
+        },
+        {
+            "selector": "javascript",
+            "colors": "css"
+        },
+        {
+            "selector": "*",
+            "colors": "css"
+        }
+    ]   
+}
